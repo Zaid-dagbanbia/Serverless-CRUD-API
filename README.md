@@ -51,9 +51,63 @@ Created *_LambdaFunctionOverHttps_* (Python 3.13 runtime), using the execution r
 3. Swap out the boilerplate execution code with the routing block located in _lambda_function.py_ and click **Deploy**.
 4. Run an execution test named _echotest_ inside the console with an echo operation payload to confirm the runtime logic is sound.
 
+### Provision the DynamoDB Table
+
+![alt text](image-6.png)
+
+
+1. Open the **DynamoDB Console** and click **Create Table**.
+2. Deploy a table named exactly _lambda-apigateway_.
+3. Specify your Partition Key as id with a data type of **String**. Leave everything else as default and create the table.
+
+
+### Configure API Gateway Routing
+
+Created a REST API called _DynamoDBOperation_ . Added a resource _/dynamodbmanager_ and added a **Post** method on that resource, integrated with _LambdaFunctionOverHttps_.
+
+
+![alt text](image-7.png)
+
+1. Inside the **API Gateway Console**, create a new **REST API** named _DynamoDBOperations_.
+2. Click **Create Resource** and enter _DynamoDBManager_ (Path: /dynamodbmanager).
+3. Select your new resource, click **Create Method**, choose **POST**, and select _LambdaFunctionOverHttps_ as the integration backend function.
+4. Click **Deploy API**, select [New Stage], name it Prod, and copy your active **Invoke URL**.
+
+### Testing
+
+The full CRUD flow was tested end-to-end using Postman, with results verified directly in the DynamoDB console (Explore table items).
+
+### Create an item
+
+![alt text](image-8.png)
+
+### List all items
+
+
+![alt text](image-11.png)
+_postman_
+
+![alt text](image-10.png)
+_console_
+
+### Update an item
+
+![alt text](image-12.png)
+_before update_
+
+![alt text](image-13.png)
+_after update_
+
+### Delete
+
+![alt text](image-14.png)
 
 
 
+### Tech Stack
 
-
-
++ Amazon API Gateway (REST API)
++ AWS Lambda (Python 3.13, boto3)
++ Amazon DynamoDB
++ AWS IAM (custom least-privilege policy)
++ Postman (testing)
