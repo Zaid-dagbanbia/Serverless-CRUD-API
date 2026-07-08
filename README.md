@@ -34,7 +34,7 @@ If the _**tableName**_ field is present in the request, the function connects to
 
 3. Name the policy _lambda-custom-policy_.
 
-![alt text](image-2.png)
+![alt text](image-16.png)
 
 * Created an execution role (_lambda-apigateway-role_) with AWS Lambda as the trusted entity, and attached the custom policy.
 
