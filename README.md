@@ -44,7 +44,7 @@ If the _**tableName**_ field is present in the request, the function connects to
 
 Created *_LambdaFunctionOverHttps_* (Python 3.13 runtime), using the execution role above.Deployed the code in **lambda_function.py**.
 
-![alt text](image-3.png)
+![alt text](image-17.png)
 
 1. Provision an AWS Lambda function from scratch named LambdaFunctionOverHttps using Python 3.13.
 2. Under Permissions, change the default execution role to Use an existing role and select _lambda-apigateway-role_.
