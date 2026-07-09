@@ -4,7 +4,7 @@ A fully serverless REST API built on AWS that performs CRUD operations on a Dyna
 
 ## High- Level Architecture
 
-![alt text](image-15.png)
+![alt text](image-18.png)
 
 *  **Amazon API Gateway** — exposes a REST API (DynamoDBOperations) with a single resource (/dynamodbmanager) and a POST method, deployed to a Prod stage. 
 
